@@ -34,7 +34,7 @@ export class HomePage {
       this.fecha.setValue('');
       this.descripcion.setValue('');
     }else{
-      alert('INGRESE UN VALOR VALIDO EN TODOS LOS COMPARTIMENTOS');
+      alert('INGRESE UN VALOR VALIDO EN TODOS LOS COMPARTIMENTOS OBLIGATORIOS (aquellos con *)');
     }
   }
 

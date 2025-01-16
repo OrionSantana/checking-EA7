@@ -15,16 +15,25 @@
 -->
 <div style="height: 100vh; background-color: rgb(167, 255, 229);">
 <br>
-<h3><b>AGENDA</b></h3><br>
-  
-    <ion-label>Nombre: </ion-label><ion-label style="color: red;"><b>*</b></ion-label>
-  <ion-input [(ngModel)]="nombre.value" placeholder="  ___________________" class="answer"></ion-input><br>
-    <ion-label>Descripción: </ion-label>
-  <ion-input [(ngModel)]="descripcion.value" placeholder="  __________________" class="answer"></ion-input><br>
-    <ion-label>Fecha: </ion-label><ion-label style="color: red;"><b>*</b></ion-label>
-  <ion-input [(ngModel)]="fecha.value" type="date" class="answer"></ion-input><br>
+<h3 style="text-align: center;"><b>AGENDA</b></h3><br>
+  <table>
+    <tr>
+      <th><ion-label>Nombre: </ion-label><ion-label style="color: red;"><b>*</b></ion-label></th>
+      <th> <ion-label>Descripción: </ion-label></th>
+      <th><ion-label>Fecha: </ion-label><ion-label style="color: red;"><b>*</b></ion-label></th>
+    </tr>
+    <tbody>
 
-  <ion-button shape="round" style="width: 12%;" (click)="NTarea()">Añadir tarea</ion-button>
+      <tr>
+        <td><ion-input [(ngModel)]="nombre.value" placeholder="  ___________________" class="answer"></ion-input><br></td>
+        <td><ion-input [(ngModel)]="descripcion.value" placeholder="  __________________" class="answer"></ion-input><br></td>
+        <td><ion-input [(ngModel)]="fecha.value" type="datetime-local" class="answer"></ion-input><br></td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="text-align: center;">
+    <ion-button  shape="round" style="width: 12%;" (click)="NTarea()">Añadir tarea</ion-button>
+  </div>
   <br><br><br>
   <div class="container" style="background-color: rgb(167, 255, 229);">
     <table>
@@ -42,7 +51,7 @@
           <td>{{tarea.descripcion}}</td>
           <td>{{tarea.fecha}}</td>
           <td>
-            <ion-checkbox [(ngModel)]="tarea.completada" id="tarea.id" style="width: 140px;"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="tarea.completada" style="width: 140px;"></ion-checkbox>
           </td>
         </tr>
       </tbody>

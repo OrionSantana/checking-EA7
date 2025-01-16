@@ -13,10 +13,41 @@
   </div>
 </ion-content>
 -->
-<div style="height: all; background-color: aqua;">
-<ion-button shape="round" style="width: 100px;">Default</ion-button>
-<ion-button shape="round" style="width: 100px;">Default</ion-button><br>
-<ion-button shape="round" style="width: 100px;">Default</ion-button>
+<div style="height: 100vh; background-color: rgb(167, 255, 229);">
+<br>
+<h3><b>AGENDA</b></h3><br>
+  
+    <ion-label>Nombre: </ion-label><ion-label style="color: red;"><b>*</b></ion-label>
+  <ion-input [(ngModel)]="nombre.value" placeholder="  ___________________" class="answer"></ion-input><br>
+    <ion-label>Descripción: </ion-label>
+  <ion-input [(ngModel)]="descripcion.value" placeholder="  __________________" class="answer"></ion-input><br>
+    <ion-label>Fecha: </ion-label><ion-label style="color: red;"><b>*</b></ion-label>
+  <ion-input [(ngModel)]="fecha.value" type="date" class="answer"></ion-input><br>
+
+  <ion-button shape="round" style="width: 12%;" (click)="NTarea()">Añadir tarea</ion-button>
+  <br><br><br>
+  <div class="container" style="background-color: rgb(167, 255, 229);">
+    <table>
+      
+        <tr>
+          <th>NOMBRE</th>
+          <th>Descripción</th>
+          <th>Fecha</th>
+          <th>Completada</th>
+        </tr>
+      
+      <tbody>
+        <tr *ngFor="let tarea of tareas" [ngClass]="{'completada': tarea.completada, 'incompleta': !tarea.completada}">
+          <td>{{tarea.nombre}}</td>
+          <td>{{tarea.descripcion}}</td>
+          <td>{{tarea.fecha}}</td>
+          <td>
+            <ion-checkbox [(ngModel)]="tarea.completada" id="tarea.id" style="width: 140px;"></ion-checkbox>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
